@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&family=Mochiy+Pop+One&display=swap");
+
+/*
+.kiwi-maru-light {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kiwi-maru-regular {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kiwi-maru-medium {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+*/
+
+@include atSmall {
+  .page-banner {
+    margin-bottom: 60px;
+  }
+
+  .my-header-style__nav_menu .main_navbar_menu {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .page-banner__content h2 {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+
+  .page-banner__content .change_text h1 {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .page-banner__content .change_text {
+    left: 80%;
+  }
+
+  .page-banner__content .speech_bubble .pull {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+  }
+
+  .post-header {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.65rem;
+  }
+
+  .my-footer-style
+    .footer-full-content
+    .footer_info_and_post
+    .footer_info
+    .footer-info-title {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.65rem;
+  }
+
+  .my-footer-style .footer-full-content .footer_recommand_post h2,
+  .my-footer-style
+    .footer-full-content
+    .footer_recommand_keyword
+    .recommand_keyword_title {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.44rem;
+  }
+}
+
+@include atLarge {
+  .page-banner {
+    margin-bottom: 80px;
+  }
+
+  .my-header-style__nav_menu .main_navbar_menu {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .page-banner__content h2 {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+
+  .page-banner__content .change_text h1 {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3.5rem;
+    text-align: left;
+  }
+
+  .page-banner__content .change_text {
+    left: 34%;
+  }
+
+  .page-banner__content .speech_bubble .pull {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+  }
+
+  .post-header {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+  }
+
+  .my-footer-style
+    .footer-full-content
+    .footer_info_and_post
+    .footer_info
+    .footer-info-title {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.65rem;
+  }
+
+  .my-footer-style .footer-full-content .footer_recommand_post h2,
+  .my-footer-style
+    .footer-full-content
+    .footer_recommand_keyword
+    .recommand_keyword_title {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.44rem;
+  }
+}

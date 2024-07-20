@@ -1,0 +1,124 @@
+//-----반응형을 위한 미디어쿼리-------
+
+// //작은 사이즈일때
+// @mixin atSmall {
+//   @media (min-width: 530px) {
+//     @content;
+//   }
+// }
+
+// //보통 사이즈일때
+// @mixin atSmallMedium {
+//   @media (min-width: 767px) {
+//     @content;
+//   }
+// }
+
+// //큰 사이즈일때
+// @mixin atMedium {
+//   @media (min-width: 960px) {
+//     @content;
+//   }
+// }
+
+:root {
+  --background-color: #{$light-background-color};
+  --text-color: #{$dark-text-color};
+  --box-shadow-color: #{$light-shadow-color};
+  --subbackground-color: #{$light-text-color};
+  --box-background-color: #{$light-text-color};
+  --box-background-color2: #{$light-text-color};
+}
+
+// 작은 사이즈일때
+@mixin atSmall {
+  @media (max-width: 530px) {
+    @content;
+  }
+}
+
+@mixin atSmallMedium {
+  @media (min-width: 531px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (min-width: 768px) and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin atLarge {
+  @media (min-width: 961px) {
+    @content;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+//전체적인 거
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: relative;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Gaegu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  &[data-theme="light-mode"] {
+    --background-color: #{$light-background-color};
+    --subbackground-color: #{$light-text-color};
+    --text-color: #{$dark-text-color};
+    --box-shadow-color: #{$light-shadow-color};
+    --box-background-color: #{$light-text-color};
+    --box-background-color2: #{$light-text-color};
+  }
+
+  &[data-theme="dark-mode"] {
+    --background-color: #{$dark-background-color};
+    --subbackground-color: #{$dark-background-color};
+    --text-color: #{$light-text-color};
+    --box-shadow-color: #{$dark-shadow-color};
+    --box-background-color: #{$dark-background-color2};
+    --box-background-color2: #{$dark-background-color};
+  }
+}
+
+//이미지
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//링크
+a {
+  color: $grayTextColor;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+//마진 설정
+
+p,
+ul,
+ol {
+  margin: 0 0 1.65em 0;
+}
+
+p,
+li {
+  line-height: 1.65;
+}
+
+li {
+  list-style: none;
+}

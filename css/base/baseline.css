@@ -1,0 +1,35 @@
+body {
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #7f2222;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.65em 0;
+}
+
+p,
+li {
+  line-height: 1.65;
+}
+
+li {
+  list-style: none;
+}/*# sourceMappingURL=baseline.css.map */

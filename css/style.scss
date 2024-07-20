@@ -1,0 +1,20 @@
+//베이스가 되는 부분 스타일
+@import "base/variables.scss";
+@import "base/baseline.scss";
+@import "base/small-baseline-class.scss";
+
+//각 부문의 스타일
+@import "modules/my-header-style.scss";
+@import "modules/page-banner.scss";
+@import "modules/lately_post.scss";
+@import "modules/movie_post.scss";
+@import "modules/category_song_post.scss";
+@import "modules/coding_and_la_post.scss";
+@import "modules/my-footer-style.scss";
+
+@import "modules/coding_home.scss";
+@import "modules/song_home.scss";
+@import "modules/posting_page.scss";
+
+//일본어 전용
+@import "jp_style.scss";

@@ -1,0 +1,729 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu:wght@300;400;700&display=swap");
+
+$animation-opacity: 2s ease-out 0s normal none infinite opacity;
+$animation-change: 6s linear 0s normal none infinite change;
+
+$animation-glitch: glitch 2s 0 linear alternate-reverse;
+$animation-glitch-2: glitch-2 3s 0 linear alternate-reverse;
+
+//CSS 애니메이션 이징 함수
+$easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+:root {
+  --color-primary: #f6aca2;
+  --color-secondary: #f49b90;
+  --color-tertiary: #f28b7d;
+  --color-quaternary: #f07a6a;
+  --color-quinary: #ee6352;
+  /*
+  --color-primary: #5192ED;
+  --color-secondary: #69A1F0;
+  --color-tertiary: #7EAEF2;
+  --color-quaternary: #90BAF5;
+  --color-quinary: #A2C4F5;
+  */
+}
+
+@mixin animation-name($name...) {
+  -o-animation: $name;
+  -moz-animation: $name;
+  -webkit-animation: $name;
+  animation: $name;
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+.page-banner.page-banner_blog {
+  padding: 100px 0 230px 0;
+
+  .text_box {
+    position: absolute;
+    top: 170%;
+    left: 32%;
+    font-size: 3rem;
+    color: #fff;
+
+    .blink {
+      animation: blink 0.5s infinite;
+      font-size: 2.5rem;
+    }
+
+    @keyframes blink {
+      to {
+        opacity: 0;
+      }
+    }
+  }
+
+  .language_main_banner_text {
+    position: absolute;
+    top: 145%;
+    left: 38%;
+    font-size: 3rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .language_text_shadows {
+      //text-shadow: 3px 3px 0 red, 6px 6px 0 rgb(195, 151, 151), 9px 9px blue,
+      //  12px 12px 0 rgb(111, 111, 134);
+      text-align: center;
+      margin: 0;
+      color: yellow;
+      //color: transparent;
+      //background-color: white;
+      //background-clip: text;
+      animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+      letter-spacing: 0.4rem;
+    }
+  }
+
+  .movie_main_banner_text {
+    position: absolute;
+    top: 200%;
+    left: 35%;
+    font-size: 5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .movie_glitch {
+      position: relative;
+
+      &::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 2px;
+        text-shadow: -1px 0 red;
+        top: 10;
+        color: white;
+        background: #232121;
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+        animation: noise-anim 2s infinite linear alternate-reverse;
+      }
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        left: -2px;
+        text-shadow: 1px 0 blue;
+        top: 10;
+        color: white;
+        background: #232121;
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+        animation: noise-anim-2 3s infinite linear alternate-reverse;
+      }
+    }
+  }
+
+  .song_main_banner_text {
+    position: absolute;
+    top: 170%;
+    left: 18%;
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      position: relative;
+      color: transparent;
+      -webkit-text-stroke: 0.2vw $subColor2;
+      line-height: 1;
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0px;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        color: $subColor2;
+        -webkit-text-stroke: 0vw red;
+        border-right: 2px solid $subColor2;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typinganimation 6s linear infinite;
+        line-height: 1;
+        //clip: rect(0, 0, auto, auto);
+      }
+    }
+  }
+
+  @keyframes typinganimation {
+    0%,
+    10%,
+    100% {
+      width: 0;
+    }
+    70%,
+    90% {
+      width: 100%;
+    }
+  }
+
+  @keyframes shadows {
+    0% {
+      text-shadow: none;
+    }
+    10% {
+      text-shadow: 3px 3px 0 var(--color-secondary);
+    }
+    20% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary);
+    }
+    30% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+    }
+    40% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+        12px 12px 0 var(--color-quinary);
+    }
+    50% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+        12px 12px 0 var(--color-quinary);
+    }
+    60% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+        12px 12px 0 var(--color-quinary);
+    }
+    70% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+    }
+    80% {
+      text-shadow: 3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary);
+    }
+    90% {
+      text-shadow: 3px 3px 0 var(--color-secondary);
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    40% {
+      transform: translate(-12px, -12px);
+    }
+    50% {
+      transform: translate(-12px, -12px);
+    }
+    60% {
+      transform: translate(-12px, -12px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes noise-anim {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
+  }
+
+  @keyframes noise-anim-2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
+  }
+}
+
+.page-banner {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 380px 0;
+  background-color: rgb(43, 43, 43);
+
+  @include atMedium {
+    padding: 160px 0 390px 0;
+  }
+
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.35;
+    background-size: cover;
+    background-position: center;
+    /* background-image: url("/image/study.gif");*/
+  }
+
+  &__content {
+    h2 {
+      font-size: 2rem;
+      color: #fabe4d;
+      text-align: center;
+      position: relative;
+
+      @include atSmall {
+        margin-top: 0;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 50%; // 원하는 너비로 설정합니다.
+        height: 0.7px; // 선의 두께를 설정합니다.
+        background-color: #fff; // 선의 색상을 하얀색으로 설정합니다.
+        margin: 15px auto 0; // 텍스트 아래에 여백을 추가합니다.
+      }
+    }
+
+    .change_text {
+      position: absolute;
+      top: 50%;
+      left: 42%;
+      margin: 30px 0 0 -205px;
+
+      .mobile-br {
+        display: none;
+        @include atSmall {
+          display: inline;
+        }
+      }
+
+      @include atSmall {
+        left: 70%;
+      }
+
+      @include atSmallMedium {
+        left: 39%;
+      }
+
+      h1 {
+        font-family: "Black Han Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #fff;
+        font-size: 4.2rem;
+        text-align: center;
+
+        @include atSmall {
+          font-size: 3.4rem;
+        }
+
+        @include atSmallMedium {
+          font-size: 2.5rem;
+          text-align: center;
+        }
+      }
+
+      & #word-switcher {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        transition: width 400ms $easeInCubic;
+        white-space: nowrap;
+        margin-right: -5px;
+        margin-top: 0;
+
+        &.in p {
+          -webkit-animation: leave-word 300ms $easeOutCubic;
+          -moz-animation: leave-word 300ms $easeOutCubic;
+          -webkit-transform-origin: center 35px;
+          transform-origin: center 35px;
+
+          &.active {
+            -webkit-animation: enter-word 300ms 100ms $easeOutCubic;
+            animation: enter-word 300ms 100ms $easeOutCubic;
+          }
+        }
+        p {
+          visibility: hidden;
+          position: absolute;
+          left: 0;
+          color: $subColor2;
+
+          &.active {
+            visibility: visible;
+            display: inline-block;
+            vertical-align: top;
+            margin: -11px 0px;
+          }
+        }
+      }
+
+      @include keyframes(leave-word) {
+        0% {
+          -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+          visibility: visible;
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+          visibility: visible;
+          opacity: 0;
+        }
+      }
+      @include keyframes(enter-word) {
+        0% {
+          -webkit-transform: rotateX(90deg);
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: rotateX(0deg);
+        }
+      }
+
+      // glitch
+      .glitch {
+        color: white;
+        position: absolute;
+
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          left: 2px;
+          text-shadow: -1px 0 red;
+          top: 0;
+          color: white;
+          background: #ace65b;
+          overflow: hidden;
+          clip: rect(0, 900px, 0, 0);
+          @include animation-name($animation-glitch);
+          //animation: noise-anim 2s infinite linear alternate-reverse
+        }
+
+        &:before {
+          content: attr(data-text);
+          position: absolute;
+          left: -2px;
+          text-shadow: 1px 0 blue;
+          top: 0;
+          color: white;
+          background: cornflowerblue;
+          overflow: hidden;
+          clip: rect(0, 900px, 0, 0);
+          @include animation-name($animation-glitch-2);
+          //animation: noise-anim-2 3s infinite linear alternate-reverse
+        }
+      }
+
+      @include keyframes(glitch) {
+        0% {
+          clip: rect(23px, 9999px, 17px, 0);
+        }
+        5% {
+          clip: rect(34px, 9999px, 24px, 0);
+        }
+        10% {
+          clip: rect(34px, 9999px, 9px, 0);
+        }
+        15.0% {
+          clip: rect(20px, 9999px, 22px, 0);
+        }
+        20% {
+          clip: rect(5px, 9999px, 18px, 0);
+        }
+        25% {
+          clip: rect(15px, 9999px, 35px, 0);
+        }
+        30.0% {
+          clip: rect(26px, 9999px, 36px, 0);
+        }
+        35% {
+          clip: rect(26px, 9999px, 33px, 0);
+        }
+        40% {
+          clip: rect(26px, 9999px, 5px, 0);
+        }
+        45% {
+          clip: rect(13px, 9999px, 28px, 0);
+        }
+        50% {
+          clip: rect(29px, 9999px, 38px, 0);
+        }
+        55.0% {
+          clip: rect(30px, 9999px, 13px, 0);
+        }
+        60.0% {
+          clip: rect(7px, 9999px, 36px, 0);
+        }
+        65% {
+          clip: rect(28px, 9999px, 14px, 0);
+        }
+        70% {
+          clip: rect(15px, 9999px, 16px, 0);
+        }
+        75% {
+          clip: rect(8px, 9999px, 8px, 0);
+        }
+        80% {
+          clip: rect(39px, 9999px, 2px, 0);
+        }
+        85.0% {
+          clip: rect(20px, 9999px, 18px, 0);
+        }
+        90% {
+          clip: rect(27px, 9999px, 8px, 0);
+        }
+        95% {
+          clip: rect(33px, 9999px, 14px, 0);
+        }
+        100% {
+          clip: rect(23px, 9999px, 25px, 0);
+        }
+      }
+      @include keyframes(glitch-2) {
+        0% {
+          clip: rect(5px, 9999px, 21px, 0);
+        }
+        5% {
+          clip: rect(38px, 9999px, 11px, 0);
+        }
+        10% {
+          clip: rect(37px, 9999px, 18px, 0);
+        }
+        15.0% {
+          clip: rect(11px, 9999px, 38px, 0);
+        }
+        20% {
+          clip: rect(24px, 9999px, 13px, 0);
+        }
+        25% {
+          clip: rect(37px, 9999px, 25px, 0);
+        }
+        30.0% {
+          clip: rect(28px, 9999px, 40px, 0);
+        }
+        35% {
+          clip: rect(14px, 9999px, 33px, 0);
+        }
+        40% {
+          clip: rect(35px, 9999px, 3px, 0);
+        }
+        45% {
+          clip: rect(23px, 9999px, 19px, 0);
+        }
+        50% {
+          clip: rect(7px, 9999px, 18px, 0);
+        }
+        55.0% {
+          clip: rect(18px, 9999px, 15px, 0);
+        }
+        60.0% {
+          clip: rect(14px, 9999px, 31px, 0);
+        }
+        65% {
+          clip: rect(29px, 9999px, 4px, 0);
+        }
+        70% {
+          clip: rect(12px, 9999px, 2px, 0);
+        }
+        75% {
+          clip: rect(3px, 9999px, 38px, 0);
+        }
+        80% {
+          clip: rect(24px, 9999px, 39px, 0);
+        }
+        85.0% {
+          clip: rect(34px, 9999px, 12px, 0);
+        }
+        90% {
+          clip: rect(15px, 9999px, 11px, 0);
+        }
+        95% {
+          clip: rect(10px, 9999px, 14px, 0);
+        }
+        100% {
+          clip: rect(38px, 9999px, 21px, 0);
+        }
+      }
+    }
+
+    .speech_bubble {
+      padding: 20px;
+      position: absolute;
+      top: 350%;
+      margin: 50px 0 0 0px;
+
+      @include atSmall {
+        top: 380%;
+        left: 20%;
+      }
+
+      @include atSmallMedium {
+        left: 78%;
+        top: 530%;
+      }
+
+      @include atMedium {
+        left: 67%;
+      }
+
+      @include atLarge {
+        left: 39%;
+      }
+
+      .pull {
+        position: relative;
+        margin: 40px 0px;
+        padding: 20px;
+        width: 175px;
+        height: 35px;
+        color: #fff;
+        font-size: 1.2rem;
+        border-radius: 15px;
+        background-color: $subColor;
+
+        @include atSmall {
+          padding: 15px;
+          width: 148px;
+          height: 16px;
+          font-size: 1rem;
+        }
+
+        @include atSmallMedium {
+          width: 175px;
+          height: 35px;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 60px;
+          right: 80px;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 30px solid $subColor;
+
+          @include atSmall {
+            top: 40px;
+            right: 60px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid $subColor;
+          }
+        }
+      }
+    }
+
+    .hello_ch {
+      position: absolute;
+      top: 560%;
+      margin: 80px 0 0 30px;
+      width: 60px;
+      height: 60px;
+      background-size: cover;
+      background-position: center;
+      background-image: url("/image/hi1.gif");
+
+      @include atSmall {
+        top: 550%;
+        left: 37%;
+      }
+
+      @include atSmallMedium {
+        left: 78%;
+        top: 530%;
+      }
+
+      @include atMedium {
+        left: 67%;
+      }
+
+      @include atLarge {
+        left: 45%;
+      }
+    }
+  }
+}
+
+#word {
+  margin-top: 0;
+  padding-top: 50px;
+  text-align: left;
+  list-style: none;
+  @include animation-name($animation-change);
+
+  li {
+    line-height: 40px;
+    margin: 0;
+  }
+}
+
+@include keyframes(opacity) {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(change) {
+  0% {
+    margin-top: 0;
+  }
+  15% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -40px;
+  }
+  40% {
+    margin-top: -40px;
+  }
+  50% {
+    margin-top: -80px;
+  }
+  65% {
+    margin-top: -80px;
+  }
+  75% {
+    margin-top: -40px;
+  }
+  85% {
+    margin-top: -40px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}

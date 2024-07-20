@@ -1,0 +1,16 @@
+.my-header-style {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  z-index: 1000;
+}
+.my-header-style__menu_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-header-style__nav_menu .main_navbar_menu {
+  text-align: right;
+  display: flex;
+}/*# sourceMappingURL=my-header-style.css.map */

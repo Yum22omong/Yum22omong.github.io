@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu:wght@300;400;700&family=Nanum+Gothic&display=swap");
+
+.category_song_content {
+  margin: 60px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  background-color: var(--box-background-color);
+  padding: 30px;
+  border-radius: 10px;
+  justify-items: start;
+
+  @include atSmall {
+    margin: 40px 0;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 24px 6px;
+  }
+
+  @include atSmallMedium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include atMedium {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta {
+    position: relative;
+    margin: auto;
+    padding: 22px 24px;
+    transition: all 0.2s ease;
+
+    @include atSmall {
+      margin: 0;
+      padding: 15px 11px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 28px;
+      width: 70px;
+      height: 64px;
+      transition: all 0.3s ease;
+    }
+
+    span {
+      position: relative;
+      font-size: 1.2rem;
+      line-height: 18px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      vertical-align: middle;
+      color: var(--text-color);
+      font-family: "Nanum Gothic", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+
+      @include atSmall {
+        font-size: 0.95rem;
+      }
+    }
+
+    svg {
+      position: relative;
+      top: 0;
+      margin-left: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--text-color);
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: all 0.3s ease;
+
+      @include atSmall {
+        margin-left: -1px;
+        stroke-width: 1;
+      }
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+
+        svg {
+          transform: translate(0);
+        }
+      }
+    }
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+  .spring {
+    &::before {
+      background: rgba(#f1a3b5, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#d97d93, 0.5);
+      }
+    }
+  }
+  .work {
+    &::before {
+      background: rgba(#f2bfa7, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#dc977a, 0.5);
+      }
+    }
+  }
+  .workout {
+    &::before {
+      background: rgba(#f3dc9a, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#e7ca79, 0.5);
+      }
+    }
+  }
+  .josun {
+    &::before {
+      background: rgba(#c7d2cb, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#a9cab5, 0.5);
+      }
+    }
+  }
+  .summer {
+    &::before {
+      background: rgba(#b4c5cf, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#99b8ca, 0.5);
+      }
+    }
+  }
+  .rain {
+    &::before {
+      background: rgba(#9fd2db, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#7dc6d3, 0.5);
+      }
+    }
+  }
+  .winter {
+    &::before {
+      background: rgba(#c1b2c9, 0.5);
+    }
+    &:hover {
+      &::before {
+        background: rgba(#b38fc6, 0.5);
+      }
+    }
+  }
+}

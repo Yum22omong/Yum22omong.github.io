@@ -1,0 +1,203 @@
+.scroll_top_progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-image: linear-gradient(to right, $subColor, $subColor2);
+  z-index: 1001;
+}
+
+.my-header-style {
+  //스크롤 해도 위에 고정되게끔
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  z-index: 1000; //다른 요소보다 위에 표시되도록
+  transition: background-color 0.3s, color 0.3s;
+
+  &.scrolled {
+    background-color: var(--subbackground-color); //스크롤 시 배경색 변경
+    box-shadow: 1px 1px 5px var(--box-shadow-color);
+    color: var(--text-color);
+
+    .logo_title {
+      color: var(--text-color);
+    }
+    .my-header-style__menu_btn {
+      color: var(--text-color);
+    }
+    .main_navbar_menu a {
+      color: var(--text-color);
+    }
+    .sub_navbar_menu {
+      color: var(--text-color);
+    }
+  }
+
+  &__menu_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo_title {
+    color: $grayTextColor;
+
+    @include atSmall {
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__nav_menu {
+    //pc아닌 사이즈에서
+    .main_navbar_menu {
+      position: absolute;
+      display: block;
+      top: 65px;
+      left: 0;
+      right: 0;
+      background-color: var(--subbackground-color);
+      width: auto;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20%);
+      transition: opacity 0.3s ease-out, visibility 0.3s ease-out,
+        transform 0.3s ease-out;
+
+      //햄버거 버튼 눌러야만 보이게
+      &--active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+
+      li {
+        margin-bottom: 0;
+        text-align: center;
+        position: relative;
+
+        a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 1.3rem;
+          @include atSmall {
+            color: var(--text-color);
+          }
+        }
+        //서브 메뉴. 기본은 숨기고있기
+        .sub {
+          left: 0;
+          background-color: var(--subbackground-color);
+          position: absolute;
+          padding-left: 0;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 3;
+          width: 100%;
+          transition: opacity 0.3s, visibility 0.3s;
+
+          li {
+            display: block;
+            position: relative;
+
+            :hover {
+              background-color: $subColor2;
+              color: var(--subbackground-color);
+            }
+
+            a {
+              padding: 10px 0px;
+              width: 100%;
+              color: var(--text-color);
+            }
+          }
+        }
+
+        & .sub.open {
+          opacity: 1;
+          visibility: visible;
+        }
+        //pc사이즈에서 호버했을때
+        @include atLarge {
+          &:hover .sub.active {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      //메뉴 pc사이즈에서
+      @include atLarge {
+        position: relative;
+        text-align: right;
+        display: flex;
+        margin-bottom: 0px;
+        padding-left: 0;
+        background-color: transparent;
+        top: 0;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      @include atMedium {
+        position: relative;
+        text-align: right;
+        display: flex;
+        margin-bottom: 0px;
+        padding-left: 0;
+        background-color: transparent;
+        top: 0;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  }
+
+  &__menu_btn {
+    //pc사이즈에서는 숨기고있기
+    @include atLarge {
+      visibility: hidden;
+    }
+
+    @include atMedium {
+      visibility: hidden;
+    }
+
+    @include atSmall {
+      position: absolute;
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 10;
+      top: 22px;
+      right: 93px;
+      color: $grayTextColor;
+    }
+  }
+
+  &__util {
+    .sub_navbar_menu {
+      display: flex;
+      padding-left: 0;
+      margin-bottom: 0px;
+      cursor: pointer;
+      color: $grayTextColor;
+
+      li {
+        margin-bottom: 0;
+        text-align: center;
+        position: relative;
+
+        i {
+          display: block;
+          padding: 20px 10px;
+        }
+      }
+    }
+  }
+}

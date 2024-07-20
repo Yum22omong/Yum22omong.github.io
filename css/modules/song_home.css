@@ -1,0 +1,24 @@
+.song-tab-wrap {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 0 20px;
+}
+.song-tab-wrap .tab-label {
+  color: Gray;
+  cursor: pointer;
+  flex: 1;
+  font-weight: bold;
+  order: -1;
+  padding: 12px 24px;
+  position: relative;
+  text-align: center;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}/*# sourceMappingURL=song_home.css.map */

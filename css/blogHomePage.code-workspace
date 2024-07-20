@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../Downloads/참고용2"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "blogHomePage"
+  }
+}

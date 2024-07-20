@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu:wght@300;400;700&family=Nanum+Gothic&display=swap");
+.movie_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.movie_content .movie_image_box {
+  flex: 1 1 50%;
+}
+.movie_content .movie_image_box img {
+  width: 90%;
+  height: 550px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.movie_content .mobie_explanation_box {
+  flex: 1 1 50%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 26px;
+  height: 80%;
+}
+.movie_content .mobie_explanation_box .movie_title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.movie_content .mobie_explanation_box .movie_tag_content {
+  margin-bottom: 30px;
+}
+.movie_content .mobie_explanation_box .movie_tag_content .movie_tagbox {
+  background-color: #fabe4d;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.movie_content .mobie_explanation_box .summary_box {
+  font-size: 1rem;
+  background-color: ghostwhite;
+  padding: 15px;
+}/*# sourceMappingURL=movie_post.css.map */

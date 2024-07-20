@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  width: calc(100% - 40px);
+}
+
+.post-header {
+  font-size: 2.7rem;
+}
+
+.more_read_btn_content {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+.more_read_btn_content .more-read {
+  width: 150px;
+  height: 30px;
+}
+.more_read_btn_content .more-read .readmore_push {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #fabe4d;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.more_read_btn_content .more-read .readmore_push .read_btn {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.more_read_btn_content .more-read .readmore_push .read_btn::after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+.more_read_btn_content .more-read .readmore_push:hover .read_btn {
+  padding-right: 15px;
+}
+.more_read_btn_content .more-read .readmore_push:hover .read_btn::after {
+  opacity: 1;
+  right: 0;
+}/*# sourceMappingURL=small-baseline-class.css.map */
